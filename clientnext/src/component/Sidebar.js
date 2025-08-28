@@ -12,6 +12,9 @@ function Sidebar() {
          <Link href="/admin/technology" className="hover:bg-gray-700 p-2 rounded">Technology</Link>
          <Link href="/admin/portfolio" className="hover:bg-gray-700 p-2 rounded">Portfolio</Link>
          <Link href="/admin/events" className="hover:bg-gray-700 p-2 rounded">Events</Link>
+         <Link href="/admin/team" className="hover:bg-gray-700 p-2 rounded">Team</Link>
+         <Link href="/admin/learn" className="hover:bg-gray-700 p-2 rounded">Learn</Link>
+         <Link href="/admin/learn" className="hover:bg-gray-700 p-2 rounded">Workshop</Link>
         
         <Link href="/admin/users" className="hover:bg-gray-700 p-2 rounded">Users</Link>
         <Link href="/admin/settings" className="hover:bg-gray-700 p-2 rounded">Settings</Link>

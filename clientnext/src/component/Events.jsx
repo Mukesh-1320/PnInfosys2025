@@ -1,19 +1,20 @@
-'use client';
-import React from 'react'
+"use client";
+import React from "react";
 import Image from "next/image";
 import link from "next/link";
-import { useGetAllEventsQuery } from '../../redux/features/events/eventsApi';
+import { useGetAllEventsQuery } from "../../redux/features/events/eventsApi";
 
 function Events() {
-     const { data, isLoading, error } = useGetAllEventsQuery();
-     const events = data?.events || []
-    
-    
-          if (isLoading) return <p className="text-blue-600 text-center">Loading events...</p>
-          if (error || !events.length) return <p className="text-red-600 text-center">Failed to events.</p>
+  const { data, isLoading, error } = useGetAllEventsQuery();
+  const events = data?.events || [];
+
+  if (isLoading)
+    return <p className="text-blue-600 text-center">Loading events...</p>;
+  if (error || !events.length)
+    return <p className="text-red-600 text-center">Failed to events.</p>;
   return (
     <>
-     <section className="px-6 md:px-12 lg:px-24 py-12 bg-white">
+      <section className="px-6 md:px-12 lg:px-24 py-12 bg-white">
         <div className="text-left mb-10">
           <h2 className="text-xl md:text-2xl text-gray-800 font-semibold">
             News
@@ -49,7 +50,7 @@ function Events() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default Events
+export default Events;

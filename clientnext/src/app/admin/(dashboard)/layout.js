@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useGetAdminProfileQuery } from '../../../../redux/features/adminAuth/adminAuthApi'
 import Sidebar from '@/component/Sidebar'
 import AdminNavbar from '@/component/AdminNavbar'
-import Footer from '@/component/Footer'
+
 
 
 
@@ -47,7 +47,7 @@ export default function AdminLayout({ children }) {
       <div className="flex flex-col flex-1 min-h-screen">
         <AdminNavbar onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         <main className="flex-grow p-4">{children}</main>
-        <Footer />
+        
       </div>
     </div>
   )

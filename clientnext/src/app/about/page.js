@@ -1,4 +1,5 @@
 'use client';
+import Team from "@/component/about/Team";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -90,77 +91,6 @@ function About() {
     },
   ];
 
-  // Team Members
-  const teamMembers = [
-    {
-      name: "Vikas Jain",
-      position: "Director PNINFOSYS",
-      image: "/image/about/vikash.png",
-      color: "text-blue-600",
-    },
-    {
-      name: "Vaibhav Sir",
-      position: "Senior Advisor",
-      image: "/image/about/vaibhav.jpg",
-      color: "text-blue-600",
-    },
-    {
-      name: "Niket Bansal",
-      position: "Senior Advisor",
-      image: "/image/about/niket.jpg",
-      color: "text-blue-600",
-    },
-    {
-      name: "Rishi Jha",
-      position: "General Manager",
-      image: "/image/about/rishi.jpg",
-      color: "text-blue-600",
-    },
-    {
-      name: "Neha Jain",
-      position: "CEO PNINFOSYS",
-      image: "/image/about/neha.png",
-      color: "text-blue-600",
-    },
-    {
-      name: "Muskan Tiwari",
-      position: "Full Stack Developer",
-      image: "/image/about/muskan.jpg",
-      color: "text-blue-600",
-    },
-    {
-      name: "Kashish Tiwari",
-      position: "Full Stack Developer",
-      image: "/image/about/kashish.jpg",
-      color: "text-blue-600",
-    },
-    {
-      name: "Priyanka Chaturvedi",
-      position: "Full Stack Developer",
-      image: "/image/about/priyanka.jpg",
-      color: "text-blue-600",
-    },
-
-     {
-      name: "Devraj Pun",
-      position: "Full Stack Developer",
-      image: "/image/about/devraj.jpg",
-      color: "text-blue-600",
-    },
-     {
-      name: "Rinkesh Jha",
-      position: "Full Stack Developer",
-      image: "/image/about/Rinkesh.jpg",
-      color: "text-blue-600",
-    },
-     {
-      name: "Aman Narwariya",
-      position: "Full Stack Developer",
-      image: "/image/about/Aman.jpg",
-      color: "text-blue-600",
-    },
-    
-  ];
 
   return (
     <div className="font-sans">
@@ -294,50 +224,7 @@ function About() {
       </section>
 
       {/* Team Members Section */}
-      <section className="bg-[#F2F6FE] py-20">
-        <div className=" max-w-[1200px] mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Our Team</h2>
-          <h2 className="text-3xl font-bold text-gray-800 mb-10">
-            Meet Our Team Members
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {teamMembers.map((member, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
-              >
-                <div className="relative group bg-gray-800 flex justify-center items-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-60 h-60 rounded-full border-2 border-red-500 object-cover"
-                  />
-                  {/* hover overlay  */}
-                  <div className="absolute inset-0 bg-[#009df2] bg-opacity-95 text-white flex flex-col justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="flex gap-4">
-                      <div
-                        className="bg-white text-[#009df2] p-3 rounded-full  transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100
-                          transition-all duration-500 ease-in-out"
-                      >
-                        <FaSearch />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="py-6 h-30">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {member.name}
-                  </h3>
-                  <p className={`text-sm font-medium ${member.color}`}>
-                    {member.position}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Team/>
     </div>
   );
 }

@@ -1,6 +1,5 @@
-'use client';
+"use client";
 import React from "react";
-import Header from "../component/Header";
 import { motion } from "framer-motion";
 
 import {
@@ -16,7 +15,6 @@ import HeroSlider from "@/component/HeroSlider";
 import Technology from "@/component/Technology";
 import Portfolio from "@/component/Portfolio";
 import Events from "@/component/Events";
-
 
 function Page() {
   const learning = [
@@ -59,13 +57,34 @@ function Page() {
   //   { title: "SQL", description: "Structured Query Language.", image: "/image/sql.jpg" },
   // ];
 
-
   const services = [
-    { icon: <FaLightbulb className="w-6 h-6 text-red-500" />, title: "INNOVATIVE IDEAS", description: "PN INFOSYS believes in developing true partnerships..." },
-    { icon: <FaPenNib className="w-6 h-6 text-red-500" />, title: "CREATIVE DESIGNING", description: "PN INFOSYS brings robust skills and forward-looking perspectives..." },
-    { icon: <FaSmile className="w-6 h-6 text-red-500" />, title: "CLIENT’s Happiness", description: "Our top priority is client satisfaction..." },
-    { icon: <FaServer className="w-6 h-6 text-red-500" />, title: "FULL Maintenance", description: "PN INFOSYS Company provides a full range of maintenance..." },
-    { icon: <FaBullseye className="w-6 h-6 text-red-500" />, title: "PRACTICAL Training", description: "We don't use paper and pencil at all in our training sessions..." },
+    {
+      icon: <FaLightbulb className="w-6 h-6 text-red-500" />,
+      title: "INNOVATIVE IDEAS",
+      description: "PN INFOSYS believes in developing true partnerships...",
+    },
+    {
+      icon: <FaPenNib className="w-6 h-6 text-red-500" />,
+      title: "CREATIVE DESIGNING",
+      description:
+        "PN INFOSYS brings robust skills and forward-looking perspectives...",
+    },
+    {
+      icon: <FaSmile className="w-6 h-6 text-red-500" />,
+      title: "CLIENT’s Happiness",
+      description: "Our top priority is client satisfaction...",
+    },
+    {
+      icon: <FaServer className="w-6 h-6 text-red-500" />,
+      title: "FULL Maintenance",
+      description: "PN INFOSYS Company provides a full range of maintenance...",
+    },
+    {
+      icon: <FaBullseye className="w-6 h-6 text-red-500" />,
+      title: "PRACTICAL Training",
+      description:
+        "We don't use paper and pencil at all in our training sessions...",
+    },
   ];
 
   //   {
@@ -102,14 +121,21 @@ function Page() {
 
   return (
     <div className="font-sans">
-     {/* Hero Section */}
-     <HeroSlider/>
+      {/* Hero Section */}
+      <HeroSlider />
 
       {/* Tagline Section */}
       <section className=" text-sm md:text-base lg:text-lg text-center text-gray-800 px-1 bg-white p-6">
-        PN INFOSYS is a leading global business consulting and IT service
-        company, Whether you need to run your business more efficiently or
-        accelerate revenue growth, PN INFOSYS can get you there.
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
+          PN INFOSYS is a leading global business consulting and IT service
+          company, Whether you need to run your business more efficiently or
+          accelerate revenue growth, PN INFOSYS can get you there.
+        </motion.p>
       </section>
 
       {/* Features Section */}
@@ -140,9 +166,13 @@ function Page() {
             icon: "image/training.png",
           },
         ].map((feature, idx) => (
-          <div
+          <motion.div
             key={idx}
             className="bg-white rounded-sm shadow-lg p-6 text-center transition hover:shadow-2xl "
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: idx * 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <img
               src={feature.icon}
@@ -150,22 +180,36 @@ function Page() {
               className="bg-white w-40 h-40 mx-auto p-6 text-center transform transition-transform duration-300 hover:scale-110 rounded-full shadow-md hover:shadow-2xl "
             />
             <div className="text-5xl mb-4 h-20">{feature.image}</div>
-            <h2 className="text-xl font-semibold mb-6 text-black">{feature.title}</h2>
+            <h2 className="text-xl font-semibold mb-6 text-black">
+              {feature.title}
+            </h2>
             <p className="text-gray-600 text-sm mb-6">{feature.description}</p>
-          </div>
+          </motion.div>
         ))}
       </section>
 
       {/* Learning Environment Section */}
       <section className="bg-[#009df2] text-white py-24 px-4 md:px-12 lg:px-24">
-        <h2 className="text-left text-3xl font-bold mb-16">
+        <motion.h2
+          className="text-left text-3xl font-bold mb-16"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1 }}
+        >
           Learning environment,Free <br />
           Internship to novice students.
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left: Service List */}
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1 }}
+          >
             {learning.map((svc, idx) => (
               <div key={idx} className="flex items-start gap-4">
                 <div className="bg-white rounded-full p-3 flex-shrink-0">
@@ -177,7 +221,7 @@ function Page() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Right: Illustration */}
           <div className="flex justify-center md:justify-end">
@@ -185,11 +229,18 @@ function Page() {
               src="/image/learning.png"
               alt="E-learning Illustration"
               className="w-full max-w-md rounded-xl"
-              animate={{ y: [0, -20, 0] }} // Move up and down
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              animate={{ y: [0, -10, 0] }}
               transition={{
-                duration: 4, // same as 4s
-                repeat: Infinity, // infinite loop
-                ease: "easeInOut", // smooth motion
+                y: {
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  duration: 2,
+                  ease: "easeInOut",
+                  delay: 0.8, // matches the slide-in duration
+                },
               }}
             />
           </div>
@@ -197,10 +248,10 @@ function Page() {
       </section>
 
       {/* Technologies  */}
-      <Technology/>
+      <Technology />
 
       {/* Portfolio Section */}
-     <Portfolio/>
+      <Portfolio />
 
       {/* Our Services  */}
       <section className="bg-[#009df2] text-white py-24 px-4 md:px-12 lg:px-24">
@@ -229,18 +280,18 @@ function Page() {
               alt="E-learning Illustration"
               className="w-full max-w-md rounded-xl"
               animate={{ y: [0, -20, 0] }} // Move up and down
-        transition={{
-          duration: 4,        
-          repeat: Infinity,   // infinite loop
-          ease: "easeInOut",  // smooth motion
-        }}
+              transition={{
+                duration: 4,
+                repeat: Infinity, // infinite loop
+                ease: "easeInOut", // smooth motion
+              }}
             />
           </div>
         </div>
       </section>
 
       {/* Events  */}
-      <Events/>
+      <Events />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { FaLink, FaSearch } from 'react-icons/fa';
 
 function Portfolio() {
     const { data, isLoading, error } = useGetAllPortfolioQuery();
-      const portfolio = data?.portfolio || []
+    const portfolio = data?.portfolio || []
 
 
       if (isLoading) return <p className="text-blue-600 text-center">Loading portfolio...</p>

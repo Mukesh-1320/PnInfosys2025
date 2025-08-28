@@ -5,6 +5,8 @@ const TechnologyController = require('../controller/TechnologyController');
 const SliderController = require('../controller/SliderController');
 const PortfolioController = require('../controller/PortfolioController');
 const EventsController = require('../controller/EventsController');
+const TeamController = require('../controller/TeamController');
+const LearnController = require('../controller/LearnController');
 const route = express.Router();
 
 
@@ -47,6 +49,20 @@ route.get('/viewEvents/:id', EventsController.viewEvents);
 route.post('/updateEvents/:id', EventsController.updateEvents);
 route.delete('/deleteEvents/:id', EventsController.deleteEvents);
 
+// Team
+route.post('/createteam', TeamController.createTeam);
+route.get('/displayTeam', TeamController.displayTeam);
+route.get('/viewTeam/:id', TeamController.viewTeam);
+route.post('/updateTeam/:id', TeamController.updateTeam);
+route.delete('/deleteTeam/:id', TeamController.deleteTeam);
+
+
+// Learn
+route.post('/createLearn', LearnController.createLearn);
+route.get('/displayLearn', LearnController.displayLearn);
+route.get('/viewLearn/:id', LearnController.viewLearn);
+route.post('/updateLearn/:id', LearnController.updateLearn);
+route.delete('/deleteLearn/:id', LearnController.deleteLearn);
 
 
 
